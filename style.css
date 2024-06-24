@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+body {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8)),
+    url("/img/Logo-X-market.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: aliceblue;
+}
+
+.container {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+.sections {
+  width: 1280px;
+  height: 300px;
+  margin: 0 auto;
+  align-items: center;
+}
+.blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+/* linear-gradient(0deg, rgba(74, 74, 74, 1) 0%, rgb(0, 0, 0) 100%) */
