@@ -10,15 +10,27 @@ p {
 ul {
   margin: 0;
   padding-left: 0;
+  list-style: none;
 }
-
+a {
+  text-decoration: none;
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  letter-spacing: 15%;
+  text-shadow: 0 0 40px #81e7fe, 0 0 55px #81e7fe, 0 0 75px #81e7fe;
+}
+a:link {
+  color: aliceblue;
+}
+a:visited {
+  color: aliceblue;
+}
 body {
-  background-image: radial-gradient(#9c9c9c00 0%, #000000 65%),
-    linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.362)),
-    url("/img/Logo-X-market.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-width: 375px;
+  min-height: 667px;
+  background: #000;
   color: aliceblue;
 }
 
@@ -29,51 +41,56 @@ body {
   margin: 0 auto;
 }
 
-.sections {
+.section2 {
   display: flex;
-  width: 1280px;
-  height: 300px;
+  flex-direction: column;
   margin: auto;
   align-items: center;
   vertical-align: middle;
+  background: #000 url("/img/logo-element.png") center center/cover no-repeat;
+}
+.buy {
+  margin-bottom: 40vh;
 }
 .blocks {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   list-style: none;
+  margin-top: 20vh;
+  background: transparent url("/img/logo-content-main.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.block3 {
+  margin-top: 6vh;
 }
 .bounce-top {
   -webkit-animation: bounce-top 1s infinite alternate forwards;
   animation: bounce-top 1s infinite alternate forwards;
 }
-.buy {
-  align-items: center;
-}
 
 .activefield {
-  width: 180px;
-  height: 60px;
+  width: 70vw;
+  height: 6vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: auto;
   color: #b6effc;
-  text-shadow: 0 0 20px #81e7fe, 0 0 30px #81e7fe, 0 0 40px #81e7fe,
-    0 0 55px #81e7fe, 0 0 75px #81e7fe;
+  text-shadow: 0 0 40px #81e7fe, 0 0 55px #81e7fe, 0 0 75px #81e7fe;
   border: 0.1rem solid #e3f6e666;
   border-radius: 1rem;
   background: transparent;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 0.8rem;
-  font-family: "Futura PT";
+  font-family: "Concert One", sans-serif;
   position: relative;
   cursor: pointer;
-  transition: 300ms cubic-bezier(0.32, 0, 0.67, 0);
-  box-shadow: inset 0 0 0.5em 0 #81e7fe, 0 0 0.5em 0 #81e7fe;
+  box-shadow: 0 0 0.5em 0 #81e7fe, 0 0 0.5em 0 #81e7fe;
 }
-.activefield:before {
+/* .activefield:before {
   content: "";
   position: absolute;
   background: #81e7fe;
@@ -85,21 +102,17 @@ body {
   bottom: -3em;
   opacity: 0.7;
   transition: 300ms cubic-bezier(0.32, 0, 0.67, 0);
-}
-.activefield:hover:before {
-  opacity: 1.1;
-  background: #ffffff;
-  box-shadow: inset 0 0 0.5em 0 #ffffff, 0 0 0.5em 0 rgb(255, 255, 255);
-  text-shadow: 0 0 20px #81e7fe, 0 0 30px #81e7fe, 0 0 40px #ffffff,
-    0 0 55px #ffffff, 0 0 75px #ffffff;
-  bottom: -3.5em;
-}
+} */
 .activefield:hover {
-  /* background: #e3f6e666; */
+  scale: 105%;
   color: #fff;
   box-shadow: 0 0 2em 0.5em #ffffff;
+  background: radial-gradient(#3e3d3d80 0%, #00000080 40%);
+  transition: 200ms cubic-bezier(0.32, 0, 0.67, 0);
 }
-
+.activefield:hover .bounce-top {
+  animation: none;
+}
 @-webkit-keyframes bounce-top {
   0% {
     -webkit-transform: translateY(-45px);
@@ -204,4 +217,50 @@ body {
     opacity: 1;
   }
 }
-/* linear-gradient(0deg, rgba(74, 74, 74, 1) 0%, rgb(0, 0, 0) 100%) */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .activefield {
+    font-size: 1rem;
+  }
+  .section2 {
+    background: #000 url("/img/logo-element.png") center center/cover no-repeat;
+  }
+  .blocks {
+    background: transparent url("/img/logo-content-main.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    background: #000 url("/img/Logo-X-market.png") center center/cover no-repeat;
+  }
+  .activefield {
+    width: 25vw;
+    height: 6vh;
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10rem;
+    grid-row-gap: 0px;
+    justify-items: center;
+    background: transparent url("/img/logo-content-main.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+  .block1 {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .block2 {
+    grid-area: 2 / 1 / 3 / 2;
+    margin-top: 16rem;
+  }
+  .block3 {
+    grid-area: 2 / 2 / 3 / 3;
+    margin-top: 16rem;
+  }
+}
